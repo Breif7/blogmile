@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import NavBar from '../NavBar';
+import NavBar from '../components/NavBar';
 
 describe('NavBar Component', () => {
   test('debe mostrar el título de la aplicación', () => {
@@ -21,9 +21,9 @@ describe('NavBar Component', () => {
       </Router>
     );
     expect(screen.getByText(/Inicio/i)).toBeInTheDocument();
-    expect(screen.getByText(/Página 1/i)).toBeInTheDocument();
-    expect(screen.getByText(/Página 2/i)).toBeInTheDocument();
-    expect(screen.getByText(/Página 3/i)).toBeInTheDocument();
+    expect(screen.getByText(/Blog/i)).toBeInTheDocument();
+    expect(screen.getByText(/Cotizador en linea/i)).toBeInTheDocument();
+    expect(screen.getByText(/Catalogo/i)).toBeInTheDocument();
 
   });
 });

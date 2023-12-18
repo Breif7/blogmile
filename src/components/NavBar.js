@@ -15,11 +15,11 @@ function NavBar() {
         </Typography>
         <Box sx={{ display: 'flex' }}>
           <Button color="inherit" component={RouterLink} to="/">Inicio</Button>
-          <Button color="inherit" component={RouterLink} to="/pagina1">Página 1</Button>
-          <Button color="inherit" component={RouterLink} to="/pagina2">Página 2</Button>
-          <Button color="inherit" component={RouterLink} to="/pagina3">Página 3</Button>
-          <Button color="inherit" component={RouterLink} to="/blog">Blog</Button>
+          <Button color="inherit" component={RouterLink} to="/blog">Blog educativo</Button>
           <Button color="inherit" component={RouterLink} to="/quote">Cotizador en linea</Button>
+          <Button color="inherit" component={RouterLink} to="/catalog">Catalogo de productos y servicios</Button>
+          <Button color="inherit" component={RouterLink} to="/contact">Contactanos</Button>
+          <Button color="inherit" component={RouterLink} to="/FAQ">FAQ</Button>
         </Box>
       </Toolbar>
     </AppBar>
