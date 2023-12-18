@@ -18,6 +18,8 @@ function NavBar() {
           <Button color="inherit" component={RouterLink} to="/pagina1">Página 1</Button>
           <Button color="inherit" component={RouterLink} to="/pagina2">Página 2</Button>
           <Button color="inherit" component={RouterLink} to="/pagina3">Página 3</Button>
+          <Button color="inherit" component={RouterLink} to="/blog">Blog</Button>
+          <Button color="inherit" component={RouterLink} to="/quote">Cotizador en linea</Button>
         </Box>
       </Toolbar>
     </AppBar>
