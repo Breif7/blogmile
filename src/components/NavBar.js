@@ -11,7 +11,7 @@ function NavBar() {
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Mi Aplicación
+          Blog oficial de Mile 3D
         </Typography>
         <Box sx={{ display: 'flex' }}>
           <Button color="inherit" component={RouterLink} to="/">Inicio</Button>

@@ -17,10 +17,6 @@ function loadArticles(setArticles) {
     });
 }
 
-
-loadArticles();
-
-
 function BlogPage() {
     const [articles, setArticles] = useState([]);
       useEffect(() => {
@@ -31,6 +27,7 @@ function BlogPage() {
       <h1>Blog de Artículos Científicos</h1>
       {articles.map(article => (
         <BlogArticle
+          data-testid="blog-article"
           key={article.id}
           title={article.title}
           description={article.description}
