@@ -12,10 +12,11 @@ export const AuthProvider = ({ children }) => {
             'Content-Type': 'application/json',
             },
             body: JSON.stringify({ email, password }),
+            credentials: 'include',
         });
 
         if (response.ok) {
-            // Manejar la respuesta exitosa (p. ej., almacenar el token, cambiar el estado)
+            console.log(response)
         } else {
             // Manejar errores o mostrar mensajes
             const errorData = await response.json();
@@ -28,6 +29,7 @@ export const AuthProvider = ({ children }) => {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
+            credentials: 'include',
             },
         });
 
@@ -52,6 +54,7 @@ export const AuthProvider = ({ children }) => {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
+            credentials: 'include',
             },
             body: JSON.stringify(body),
         });
