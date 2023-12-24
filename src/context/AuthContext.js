@@ -40,21 +40,32 @@ export const AuthProvider = ({ children }) => {
         }
         };
 
-        const register = async (email, password) => {
-        const response = await fetch('http://localhost:8001/api/register', {
+        const register = async (name , email, password) => {
+
+              const url = 'http://localhost:8001/api/register';
+              const body = {
+                name: name,
+                email: email,
+                password: password,
+            };
+        try{const response = await fetch(url, {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ email, password }),
+            body: JSON.stringify(body),
         });
 
+        const data = await response.json();
+
         if (response.ok) {
-            console.log(response)
+            console.log('Registro exitoso:', data);
         } else {
-            const errorData = await response.json();
-            console.error(errorData.error);
+            console.error('Error en el registro:', data.errors || data.message);
         }
+    } catch (error) {
+        console.error('Error en la petición:', error);
+    }
         };
 
   return (
