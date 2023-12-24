@@ -20,6 +20,9 @@ function NavBar() {
           <Button color="inherit" component={RouterLink} to="/catalog">Catalogo de productos y servicios</Button>
           <Button color="inherit" component={RouterLink} to="/contact">Contactanos</Button>
           <Button color="inherit" component={RouterLink} to="/FAQ">FAQ</Button>
+          <Button color="inherit" component={RouterLink} to="/login">Inicio de sesion</Button>
+          <Button color="inherit" component={RouterLink} to="/cart">Carrito</Button>
+          <Button color="inherit" component={RouterLink} to="/register">Registrate</Button>
         </Box>
       </Toolbar>
     </AppBar>
