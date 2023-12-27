@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { Grid, Typography, Button } from '@mui/material';
+import { AuthContext } from '../context/AuthContext'; 
 import BlogArticle from '../components/BlogArticle';
 
 function loadArticles(setArticles) {
@@ -19,23 +21,35 @@ function loadArticles(setArticles) {
 
 function BlogPage() {
     const [articles, setArticles] = useState([]);
-      useEffect(() => {
-    loadArticles(setArticles);
-  }, []); 
-   return (
-    <div>
-      <h1>Blog de Artículos Científicos</h1>
-      {articles.map(article => (
-        <BlogArticle
-          data-testid="blog-article"
-          key={article.id}
-          title={article.title}
-          description={article.description}
-          publishedOn={article.created_at}
-        />
-      ))}
-    </div>
-  );
+    const { user } = useContext(AuthContext);
+
+    useEffect(() => {
+        loadArticles(setArticles);
+    }, []);
+
+    return (
+        <div style={{ padding: 20 }}>
+            <Typography variant="h2" gutterBottom>
+                Blog de Artículos Científicos
+            </Typography>
+            {user && (
+                <Button variant="contained" color="primary" style={{ marginBottom: 20 }}>
+                    Agregar Artículo
+                </Button>
+            )}
+            <Grid container spacing={3}>
+              {articles.map(article => (
+                <Grid item xs={12} md={6} lg={4} key={article.id}>
+                  <BlogArticle
+                    title={article.title}
+                    description={article.description}
+                    publishedOn={article.created_at}
+                  />
+                </Grid>
+              ))}
+            </Grid>
+        </div>
+    );
 }
 
 export default BlogPage;

@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Box } from '@mui/material';
+import { AuthContext } from '../context/AuthContext';
+
 
 function NavBar() {
+  
+  const { auth, logout } = useContext(AuthContext);
+
   return (
     <AppBar position="static">
       <Toolbar>
@@ -20,9 +25,15 @@ function NavBar() {
           <Button color="inherit" component={RouterLink} to="/catalog">Catalogo de productos y servicios</Button>
           <Button color="inherit" component={RouterLink} to="/contact">Contactanos</Button>
           <Button color="inherit" component={RouterLink} to="/FAQ">FAQ</Button>
-          <Button color="inherit" component={RouterLink} to="/login">Inicio de sesion</Button>
+          {auth.user ? (
+          <Button color="inherit" onClick={logout}>Cerrar Sesión</Button>
+        ) : (
+          <>
+            <Button color="inherit" href="/login">Iniciar Sesión</Button>
+            <Button color="inherit" href="/register">Registrarse</Button>
+          </>
+        )}
           <Button color="inherit" component={RouterLink} to="/cart">Carrito</Button>
-          <Button color="inherit" component={RouterLink} to="/register">Registrate</Button>
         </Box>
       </Toolbar>
     </AppBar>

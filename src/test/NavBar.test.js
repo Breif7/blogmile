@@ -21,9 +21,8 @@ describe('NavBar Component', () => {
       </Router>
     );
     expect(screen.getByText(/Inicio/i)).toBeInTheDocument();
-    expect(screen.getByText(/Blog educativo/i)).toBeInTheDocument();
-    expect(screen.getByText(/Cotizador en linea/i)).toBeInTheDocument();
-    expect(screen.getByText(/atalogo de productos y servicios/i)).toBeInTheDocument();
+    expect(screen.getByText(/FAQ/i)).toBeInTheDocument();
+    expect(screen.getByText(/Registrate/i)).toBeInTheDocument();
 
   });
 });
